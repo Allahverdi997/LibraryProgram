@@ -1,0 +1,151 @@
+﻿@{
+    ViewBag.Title = "Duzenle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Duzenle</h2>
+
+@model Entities.Models.Kitablar
+
+<h2>Duzenle</h2>
+<form method="post" action="/Kitab/Duzenle" role="form" enctype="multipart/form-data">
+<div class="row">
+                  <div class="col-lg-12">
+                      <section class="panel">
+                          <header class="panel-heading">
+                              Kitab Ekle
+                          </header>
+                          <div class="panel-body">
+                              <div class="form-group has-success">
+                                      <label class="col-lg-2 control-label">Adi</label>
+                                      <div class="col-lg-10">
+                                          <input type="text" name="KitabAdi" placeholder="@Model.KitabAdi" id="f-name" class="form-control">
+                                          <p class="help-block">Lutfen Kitap Adi Ekleyiniz</p>
+                                      </div>
+                                  </div>
+                                  <div class="form-group has-success">
+                                      <label class="col-lg-2 control-label">Aciklamasi</label>
+                                      <div class="col-lg-10">
+                                          <input type="text" name="KitabAciklamasi" placeholder="@Model.KitabAciklamasi" id="l-name" class="form-control">
+                                          <p class="help-block">Lutfen Aciklama Ekleyiniz</p>
+                                      </div>
+                                  </div>
+                                  <div class="form-group has-success">
+                                      <label class="col-lg-2 control-label">Barkod Numarasi</label>
+                                      <div class="col-lg-10">
+                                          <input type="number" name="BarkodNo" placeholder="@Model.BarkodNo" id="email2" class="form-control">
+                                          <p class="help-block">Lutfen Barkod Numarasi Ekleyiniz</p>
+                                      </div>
+                                  </div>
+                                  <div class="form-group has-success">
+                                      <label class="col-lg-2 control-label">Yayin Evi</label>
+                                      <div class="col-lg-10">
+                                          <input type="text" name="YayinEvi" placeholder="@Model.YayinEvi" id="email2" class="form-control">
+                                          <p class="help-block">Lutfen Yayin Evi Ekleyiniz</p>
+                                      </div>
+                                  </div>
+                                  <div class="form-group has-success">
+                                      <label class="col-lg-2 control-label">Miktar</label>
+                                      <div class="col-lg-10">
+                                         <input type="text" name="Miktar" placeholder="@Model.Miktar" class="spinner-input form-control">
+                                          <p class="help-block">Lutfen Miktar Ekleyiniz</p>
+                                      </div>
+                                  </div>
+                                  <div class="form-group has-success">
+                                      <label class="col-lg-2 control-label">Fiyat</label>
+                                      <div class="col-lg-10">
+                                         <input type="text" name="Fiyati" placeholder="@Model.Fiyati" class="spinner-input form-control">
+                                          <p class="help-block">Lutfen Fiyat Ekleyiniz</p>
+                                      </div>
+                                  </div>
+                                  <div class="form-group has-success">
+                                      <label class="col-lg-2 control-label">Vereq Sayi</label>
+                                      <div class="col-lg-10">
+                                         <input type="text" name="VereqSayi" placeholder="@Model.VereqSayi" class="spinner-input form-control">
+                                          <p class="help-block">Lutfen Vereq Sayi Ekleyiniz</p>
+                                      </div>
+                                  </div>
+                                  <div class="form-group has-success">
+                                      <label class="col-lg-2 control-label">Kategorisi:</label>
+                                      <div class="col-lg-10">
+                                         <select class="form-control m-bot15" name="KategoriID">
+                                              @foreach (Entities.Models.Kategoriler k in ViewBag.Kategori)
+                                              {
+                                                  <option value="@k.Id" selected="@Model.KategoriID">@k.KategoriAdi</option>
+                                              }
+                                          </select>
+                                          <p class="help-block">Lutfen Kategori Seciniz</p>
+                                      </div>
+                                  </div>
+                                  <div class="form-group has-success">
+                                      <label class="col-lg-2 control-label">Tedarikcisi:</label>
+                                      <div class="col-lg-10">
+                                         <select class="form-control m-bot15 ferdi" name="TedarikciID">
+                                              @foreach (Entities.Models.FerdiTedarikci ft in ViewBag.Ferdi)
+                                              {
+                                                      <option value="@ft.TedarikciID" selected="@Model.TedarikciID">@ft.Adi @ft.Soyad</option>
+                                              }
+                                          </select>
+                                          <p class="help-block">Lutfen Tedarikci Seciniz</p>
+                                      </div>
+                                  </div>
+                                  
+                              <div class="form-group has-success">
+                                      <label class="col-lg-2 control-label">Tedarikcisi:</label>
+                                      <div class="col-lg-10">
+                                         <select class="form-control m-bot15 sirket" name="TedarikciID">
+                                             @foreach (Entities.Models.SirketTedarikci st in ViewBag.Sirket)
+                                             {
+                                                      <option value="@st.TedarikciID" selected="@Model.TedarikciID">@st.SirketAdi</option>
+                                             }
+                                          </select>
+                                          <p class="help-block">Lutfen Tedarikci Seciniz</p>
+                                      </div>
+                                  </div>
+                                  <div class="form-group has-success">
+                                      <label class="col-lg-2 control-label">Yazari:</label>
+                                      <div class="col-lg-10">
+                                         <select class="form-control m-bot15" name="YazarID">
+                                              @foreach (Entities.Models.Yazarlar y in ViewBag.Yazar)
+                                              {
+                                                  <option value="@y.Id" selected="@Model.YazarID">@y.YazarAdi @y.YazarSoyAdi</option>
+                                              }
+                                          </select>
+                                          <p class="help-block">Lutfen Yazar Seciniz</p>
+                                      </div>
+                                  </div>
+                              <input type="hidden" value="@Model.Id" name="Id"/>
+                                  <div class="form-group">
+                                          <label class="control-label col-md-3">Kitab Resim:</label>
+                                          <div class="controls col-md-9">
+                                              <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                <span class="btn btn-white btn-file">
+                                                <span class="fileupload-new"><i class="icon-paper-clip"></i> Resim Sec</span>
+                                                <input type="file" class="default" name="Resim" />
+                                                </span>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  <div class="form-group">
+                                      <div class="col-lg-offset-2 col-lg-10">
+                                          <button class="btn btn-danger" type="submit">Duzenle</button>
+                                      </div>
+                                  </div>
+                          </div>
+                      </section>
+                  </div>
+              </div>
+</form>
+@section scripts{
+    <script src="../../Content/Admin/js/jquery.js"></script>
+
+    <script>
+        $(".ferdi").change(function () {
+            $(".sirket").hide();
+        })
+        $(".sirket").change(function () {
+            $(".ferdi").hide();
+        })
+    </script>
+}
+

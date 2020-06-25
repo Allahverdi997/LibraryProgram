@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.625, 11.875" name="KitabxanaDB">
+  <DataContextMoniker Name="/KitabxanaDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="4b753a4e-a8ac-430e-80fc-20c5bf160f16" absoluteBounds="3.5, 6.75, 2, 4.8477197265624987">
+      <DataClassMoniker Name="/KitabxanaDBDataContext/aspnet_Membership" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a90769f1-a501-4a07-bddc-b5f7f0b0a103" absoluteBounds="3.515, 7.21, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cb16569f-2fbc-4d28-975e-7c4ef7539004" absoluteBounds="6.75, 0.75, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/KitabxanaDBDataContext/aspnet_PersonalizationAllUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fc5a10fa-9f72-47a7-8cfe-8fc00719e906" absoluteBounds="6.765, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="38a72eec-a81a-45ee-9703-3e82608e807b" absoluteBounds="3.75, 1, 2, 1.7708968098958329">
+      <DataClassMoniker Name="/KitabxanaDBDataContext/aspnet_Role" />
+      <nestedChildShapes>
+        <elementListCompartment Id="20feaf5a-7082-4075-8535-3d352f60d9f5" absoluteBounds="3.765, 1.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d190be0b-f643-4a34-ab37-60b8e9e163dd" absoluteBounds="0.75, 4.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/KitabxanaDBDataContext/aspnet_User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="403b54e2-6ff3-4dbc-ae60-74e1732a1f5a" absoluteBounds="0.765, 5.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8a8511a8-bc8b-420a-8552-11366a424c56" absoluteBounds="6.5, 5.375, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/KitabxanaDBDataContext/aspnet_UsersInRole" />
+      <nestedChildShapes>
+        <elementListCompartment Id="19de69f3-0a7c-4e38-a8fb-fc876f5cecc2" absoluteBounds="6.515, 5.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="103a956c-21a2-47c9-98fa-55e358f6a3d8" absoluteBounds="3.5, 4.25, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/KitabxanaDBDataContext/aspnet_Profile" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d7e1d090-b51e-490c-a90c-ac1cbafabb2e" absoluteBounds="3.515, 4.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.75 : 7.03049967447917); (1.75 : 9.31411020052083); (3.5 : 9.31411020052083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/KitabxanaDBDataContext/aspnet_User/aspnet_User_aspnet_Membership" />
+      <nodes>
+        <classShapeMoniker Id="d190be0b-f643-4a34-ab37-60b8e9e163dd" />
+        <classShapeMoniker Id="4b753a4e-a8ac-430e-80fc-20c5bf160f16" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.65625 : 2.77089680989583); (5.65625 : 6.32619466145833); (6.5 : 6.32619466145833)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/KitabxanaDBDataContext/aspnet_Role/aspnet_Role_aspnet_UsersInRole" />
+      <nodes>
+        <classShapeMoniker Id="38a72eec-a81a-45ee-9703-3e82608e807b" />
+        <classShapeMoniker Id="8a8511a8-bc8b-420a-8552-11366a424c56" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.14229573567708); (6.5 : 6.14229573567708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/KitabxanaDBDataContext/aspnet_User/aspnet_User_aspnet_UsersInRole" />
+      <nodes>
+        <classShapeMoniker Id="d190be0b-f643-4a34-ab37-60b8e9e163dd" />
+        <classShapeMoniker Id="8a8511a8-bc8b-420a-8552-11366a424c56" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.44794840494792); (3.5 : 5.44794840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/KitabxanaDBDataContext/aspnet_User/aspnet_User_aspnet_Profile" />
+      <nodes>
+        <classShapeMoniker Id="d190be0b-f643-4a34-ab37-60b8e9e163dd" />
+        <classShapeMoniker Id="103a956c-21a2-47c9-98fa-55e358f6a3d8" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="f3cee1f3-3dbf-436b-a55e-9a59a6ff61f1" absoluteBounds="9.375, 4.5, 2, 2.5401025390625">
+      <DataClassMoniker Name="/KitabxanaDBDataContext/Okuyucular" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e54574ef-a866-4cc4-b6d8-407d2140d196" absoluteBounds="9.39, 4.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 6.65949625651042); (7.35416666666667 : 6.65949625651042 : JumpStart); (7.52083333333333 : 6.65949625651042 : JumpEnd); (9.375 : 6.65949625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KitabxanaDBDataContext/aspnet_User/aspnet_User_Okuyucular" />
+      <nodes>
+        <classShapeMoniker Id="d190be0b-f643-4a34-ab37-60b8e9e163dd" />
+        <classShapeMoniker Id="f3cee1f3-3dbf-436b-a55e-9a59a6ff61f1" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d2b97af7-f19e-41e5-9c00-0d8bb319e266" absoluteBounds="6.375, 7.25, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/KitabxanaDBDataContext/aspnet_Roles" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8cf9fbdc-4738-4c73-9090-f507879563da" absoluteBounds="6.39, 7.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.4375 : 7.25); (7.4375 : 6.56899251302083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KitabxanaDBDataContext/aspnet_Roles/aspnet_Role1_aspnet_UsersInRole" />
+      <nodes>
+        <classShapeMoniker Id="d2b97af7-f19e-41e5-9c00-0d8bb319e266" />
+        <classShapeMoniker Id="8a8511a8-bc8b-420a-8552-11366a424c56" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

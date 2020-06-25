@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@using Entities.Models
+@model List<Kargolar>
+           <br /><br /><br /><br /><br />
+<section class="panel">
+                  <header class="panel-heading">
+                      Kargolari Goster
+                  </header>
+                  <div class="panel-body">
+                      <div class="adv-table editable-table ">
+                          <div class="clearfix">
+                              <div class="btn-group">
+                                <a class="btn btn-shadow btn-success ekle" href="/Kargolar/Ekle">Yeni Kargo&nbsp<i class="icon-plus"></i></a>
+                              </div>
+                          </div>
+                          <br />
+                          <br />
+                          <br />
+                          <div class="space15"></div>
+                          <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                              <thead>
+                              <tr>
+                                  <th>Adi</th>
+                                  <th>Posta Kodu</th>
+                                  <th>Telefon No</th>
+                                  <th>Web Sitesi</th>
+                                  <th>Adresi</th>
+                                  <th>Edit'le</th>
+                                  <th>Sil</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                                  @foreach (Kargolar k in Model)
+                                  {
+                                  <tr class="">
+                                     <td>@k.KargoAd</td>
+                                      @foreach (Iletisimler kat in ViewBag.Iletisim)
+                                      {
+                                          if (kat.Id==k.IletisimID)
+                                          {
+                                              <td class="center">@kat.Adresi</td>
+                                              <td class="center">@kat.PostaKodu</td>
+                                              <td class="center">@kat.TelefonNo</td>
+                                              <td class="center">@kat.WebSitesi</td>
+                                          }
+                                      }
+                                     <td><a class="btn btn-shadow btn-success" href="/Kargolar/Duzenle/@k.Id">Edit'le</a></td>
+                                     <td><a class="btn btn-shadow btn-danger sil" data-id="@k.Id">Sil</a></td>
+                                  </tr>
+                                  }
+                              
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </section>
+
+@section scripts{
+    <script src="../../Content/Admin/js/jquery.js"></script>
+    <script src="/Content/Admin/assets/fancybox/source/jquery.fancybox.js"></script>
+    <script type="text/javascript">
+        $(".sil").click(function () {
+            var Id = $(this).data("id");
+
+            $.ajax({
+                url: "/Kargolar/Sil",
+                type: "POST",
+                data: { id: Id },
+                success: function (veri) {
+                    alert(veri + " Silindi");
+                }
+            })
+        })
+
+  </script>
+}

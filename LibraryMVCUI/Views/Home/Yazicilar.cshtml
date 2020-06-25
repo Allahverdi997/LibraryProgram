@@ -1,0 +1,28 @@
+﻿
+@using Entities.Models;
+@model List<Yazarlar>
+
+<div class="box">
+                <div class="container">
+                    <div class="tesla-carousel" data-tesla-plugin="carousel" data-tesla-container=".tesla-carousel-items" data-tesla-item=">div" data-tesla-autoplay="false" data-tesla-rotate="false">
+                        <div class="site-title">
+                            <ul class="wrapper-arrows">
+                                <li><i class="icon-517 prev" title="left arrow"></i></li>
+                                <li><i class="icon-501 next" title="right arrow"></i></li>
+                            </ul>
+                            <div class="site-inside">
+                                <span>Yazicilar</span>
+                            </div>
+                        </div> 
+                        <div class="row">
+                            <div class="tesla-carousel-items">
+                                @foreach (Yazarlar  y in Model)
+                                {
+                                <div class="col-md-2 col-xs-6"><a href="/Content/Client/#"><img src="@y.Resim" alt="@y.YazarAdi @y.YazarSoyAdi" /></a></div>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>

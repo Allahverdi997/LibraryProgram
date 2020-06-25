@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using Entities.Models;
+@model List<Iletisimler>
+<br /><br /><br />
+<form method="post" action="/Kargolar/Ekle" role="form">
+<div class="row">
+                  <div class="col-lg-12">
+                      <section class="panel">
+                          <header class="panel-heading">
+                              Kargo Ekle
+                          </header>
+                          <div class="panel-body">
+                              <form role="form" class="form-horizontal tasi-form">
+                                  <div class="form-group has-success">
+                                      <label class="col-lg-2 control-label">Adi</label>
+                                      <div class="col-lg-10">
+                                          <input type="text" name="KargoAd" placeholder="" id="f-name" class="form-control">
+                                          <p class="help-block">Lutfen Kargo Adi Ekleyiniz</p>
+                                      </div>
+                                  </div>
+                                  <div class="form-group has-success">
+                                      <label class="col-lg-2 control-label">Yeni Iletisim</label>
+                                      <div class="col-lg-10">
+                                               <a class="btn btn-shadow btn-success ekle" href="/Iletisimler/Ekle">Yeni Iletisime Gerek Varmi?&nbsp<i class="icon-plus"></i></a>
+                                               <p class="help-block">Yeni Iletisime Gerek Varmi?</p>
+                                      </div>
+                                  </div>
+                                  <div class="form-group has-success">
+                                      <label class="col-lg-2 control-label">Iletisimi:</label>
+                                      <div class="col-lg-10">
+                                         <select class="form-control m-bot15" name="IletisimID">
+                                              @foreach (Iletisimler i in Model)
+                                              {
+                                                  <option value="@i.Id">@i.Adresi</option>
+                                              }
+                                          </select>
+                                          <p class="help-block">Lutfen Iletisim Seciniz</p>
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <div class="col-lg-offset-2 col-lg-10">
+                                          <button class="btn btn-danger" type="submit">Ekle</button>
+                                      </div>
+                                  </div>
+                              </form>
+                          </div>
+                      </section>
+                  </div>
+              </div>
+</form>

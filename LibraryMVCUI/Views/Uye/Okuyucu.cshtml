@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Okuyucu";
+    Layout = "~/Views/Shared/_ClientLayout.cshtml";
+}
+
+
+@foreach (MembershipUser mu in ViewBag.Okuyucu)
+{
+    
+<h2 style="margin-left:12rem;">Okuyucu</h2>
+    <div class="sort-dropdown" style="margin-left:12rem;">
+                                <span>@mu.UserName <i class="icon-515" title="515"></i></span>
+                                <ul>
+                                    <li><a href="#">Soru: @mu.PasswordQuestion</a></li>
+                                    <li><a href="#">Son Daxil Olma Tarixi: @mu.LastLoginDate</a></li>
+                                    <li><a href="#">E-mail: @mu.Email</a></li>
+                                    <li><a href="#">Kayit Tarihi: @mu.CreationDate</a></li>
+                                    <li><a href="#">Cooment: @mu.Comment</a></li>
+                                </ul>
+                            </div>
+}
